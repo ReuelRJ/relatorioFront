@@ -1,0 +1,65 @@
+<div class="container">
+  <div class="row">
+    <div class="col s4">
+      <div class="card">
+        <h5  style="text-align: center" >Registro de Deploys</h5>
+        <div class="card-content">
+          <form #deployForm="ngForm" (ngSubmit)="addDeploy(deployForm)">
+            <div class="row">
+              <div class="input-field col s12">
+                <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="deployService.selectDeploy._id" >
+                <input type="text" name="emailPO" #emailPO="ngModel" [(ngModel)]="deployService.selectDeploy.emailPO" placeholder="email do PO responsavel" value="teste" >
+                <input type="text" name="po" #po="ngModel" [(ngModel)]="deployService.selectDeploy.po" placeholder="nome do PO responsavel">
+                <input type="date" name="data" #data="ngModel" [(ngModel)]="deployService.selectDeploy.data" placeholder="Data de Deploy">
+                <input type="text" name="servico" #servico="ngModel" [(ngModel)]="deployService.selectDeploy.servico" placeholder="Servico">
+                <input type="text" class="with-gap" name="status" #status="ngModel" [(ngModel)]="deployService.selectDeploy.status" placeholder="Status Deploy" >
+                <input type="text" name="versao" #versao="ngModel" [(ngModel)]="deployService.selectDeploy.versao" placeholder="Versao Servico">
+                <input type="number" name="releaseTFS" #releaseTFS="ngModel" [(ngModel)]="deployService.selectDeploy.releaseTFS" placeholder="Id do TFS">
+                <input type="text" name="obs" #obs="ngModel" [(ngModel)]="deployService.selectDeploy.obs" placeholder="Coloque sua observacao">
+                <div class="card-action">
+                  <div class="input-fiels col s12">
+                    <button class="btn" style="margin-left: 1px;" >Save</button>
+                    <button class="btn right" (click)="resetForm(deployForm)">Clear</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col s8">
+      <table >
+        <thead >
+          <th>PO Responsavel</th>
+          <th>Data Deploy</th>
+          <th>Servico</th>
+          <th>Status</th>
+          <th>Versao</th>
+          <th>Release no TFS (ID)</th>
+          <th>OBS</th>
+          <th>Adm</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let deploy of deployService.deploy">
+            <td><a href="mailto:<%= deploy.emailPO %>" >{{deploy.po}} </a></td>
+            <td>{{deploy.data}}</td>
+            <td>{{deploy.servico}}</td>
+            <td>{{deploy.status}}</td>
+            <td>{{deploy.versao}}</td>
+            <td>{{deploy.releaseTFS}}</td>
+            <td>{{deploy.obs}}</td>
+            <td>
+              <a (click)="editDeploy(deploy)" >
+                <i class="material-icons">edit</i>
+              </a>
+              <a (click)="deleteDeploy(deploy._id)">
+                  <i class="material-icons">delete</i>
+                </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
