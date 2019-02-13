@@ -1,0 +1,84 @@
+<!-- DEFININDO A LARGURA DAS ABAS DE FORMULARIO 10 COLUNAS CENTRALIADAS (OFFSET) MARGEM ACIMA (MT-4) E MARGEM INFERIOR (MB-5) -->
+<div class="col-md-10 offset-md-1 mt4 mb-5">
+  <h3>Registro de Deploy ( HML )</h3>
+  <!-- BARRA DE NAVEGAÇÃO DAS ABAS COM MARGEM SUPERIOR E INFERIOR -->
+  <nav style="margin: 20px 0 20px 0;">
+    <!-- DEFININDO O CAMPO DAS ABAS -->
+    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+      <!-- PRIMEIRA ABA ATIVA -->
+      <a class="nav-item nav-link active" id="nav-dadospo" data-toggle="tab" href="#nav-po" role="tab">
+        <i class="fas fa-user"></i>
+        Dados do PO
+      </a>
+
+      <!-- SEGUNDA ABA -->
+      <a class="nav-item nav-link" id="nav-deploy-tab" data-toggle="tab" href="#nav-deploy" role="tab">
+        <i class="fas fa-building"></i>
+        Dados do Deploy
+      </a>
+      <!-- TERCEIRA ABA -->
+      <a class="nav-item nav-link" id="nav-obs-tab" data-toggle="tab" href="#nav-obs" role="tab">
+        <i class="fas fa-suitcase"></i>
+        Observações da Deploy
+      </a>
+      <!-- QUARTA ABA -->
+      <a class="nav-item nav-link" id="nav-lista-tab" data-toggle="tab" href="#nav-lista" role="tab" >
+        <i class="fas fa-list"></i>
+        Lista de Deploys
+      </a>
+    </div>
+  </nav>
+
+  <!-- CONTEUDO GERAL DAS ABAS COM SOMBRA E MARGEM INTERNA(PADDING)-->
+  <div class="tab-content card " id="nav-tabContent" style="box-shadow: 5px 5px 5px #ccc; padding: 20px;">
+    <div class="tab-pane fade show active" id="nav-dadospo" role="tabpanel">
+      <form>
+        <!-- LINHA DE FORMULARIO TODOS OS CAMPOS FICARÃO NA MESMA LINHA-->
+        <div class="form-row">
+
+          <!-- GRUPOS DO FORMULARIO COM COLUNA DE TAMANHO AUTOMATICO MARGEM DIREITA (MR-5) -->
+          <div class="form-group col-auto mr-5">
+            <img src="https://randomuser.me/api/portraits/women/21.jpg" class="rounded-circle shadow">
+          </div>
+          <!-- GRUPO DE FORMULARIO DE ALTURA MENOR (FORM-CONTROL-SM) -->
+          <div class="form-group col-md-5">
+            <label for="nome">Nome Completo:</label>
+            <input type="text" id="nome" class="form-control form-control-sm" placeholder="Digite o Nome do PO" required >
+          </div>
+        </div>
+
+        <!-- NOVA LINHA DE CAMPOS -->
+        <div class="form-row">
+
+          <div class="form-group col-md-6">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control form-control-sm" id="email" placeholder="Digite seu Email" required>
+
+          </div>
+
+        </div>
+
+        <div class="row mr-2" style="float:right;">
+          <!-- BOTÃO VERMELHO, PEQUENO (BTN-SM) E MARGEM DIREITA(MR-2) -->
+          <button class="btn btn-danger btn-sm mr-2"type="reset">
+            Limpar &nbsp; <i class="fa fatrash"></i>
+          </button>
+          <button class="btn btn-primary btn-sm" type="submit">
+            Próximo &nbsp; <i class="far fa-arrowalt-circle-right"></i>
+          </button>
+
+        </div>
+      </form>
+    </div>
+
+
+
+
+
+  </div>
+
+
+
+
+
+</div>
